@@ -1,23 +1,28 @@
 package less4;
 
-import less4.controller.StudentController;
-import less4.model.Student;
-
-import java.util.List;
+import less4.controller.TeacherController;
+import less4.data.DataBase;
+import less4.service.TeacherServise;
+import static less4.service.TeacherServise.getTeachers;
 
 public class Lesson4 {
 
-    public static void main(String[] args) {
-
-        new StudentController()
-                .sendOnConsole(List.of(new Student(1, "Sasha", "Ivanov"),
-                        new Student(1, "Ira", "Ivanova")));
-
+    public static void main(String[] args) throws Exception {
+    DataBase.fillDB();
+        // new StudentController()
+        //         .sendOnConsole(List.of(new Student(1, "Sasha", "Ivanov"),
+        //                 new Student(1, "Ira", "Ivanova")));
+        
+        new TeacherController().sendOnConsole(getTeachers());
+        new TeacherServise().createTeacher(3, "Vitaliy", "Pupkin");
+        new TeacherController().editTeacher(1, "Leonid", "Nemov");
+        new TeacherController().sendOnConsole(getTeachers());
     }
+    
 
-//    private static List<Student> getStudents() {
-//        Student s1 = new Student(1, "Sasha", "Ivanov");
-//        Student s2 = new Student(1, "Ira", "Ivanova");
-//        return List.of(s1, s2);
-//    }
+    // public static List<Teacher> getTeachers() {
+    //    Teacher t1 = new Teacher(1, "Alex", "Petrov");
+    //    Teacher t2 = new Teacher(1, "Lena", "Petrova");
+    //    return List.of(t1, t2);
+   //}
 }

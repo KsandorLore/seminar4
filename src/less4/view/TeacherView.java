@@ -1,15 +1,12 @@
 package less4.view;
 
-import less4.model.Teatcher;
-
-import java.util.Collections;
 import java.util.List;
+import less4.model.Teacher;
 
-public class TeacherView implements UserView<Teatcher> {
+public class TeacherView implements UserView<Teacher> {
 
     @Override
-    public void sendOnConsole(List<Teatcher> teachers) {
-        Collections.sort(teachers);
+    public void sendOnConsole(List<Teacher> teachers) {
         System.out.println(teachers);
     }
 

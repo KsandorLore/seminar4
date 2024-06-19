@@ -11,6 +11,6 @@ public class Student extends User {
 
     @Override
     public String toString() {
-        return String.format("Student [id=%d, name=%s, lastName=%s]", id, name, lastName);
+        return String.format("Student [id = %d, name = %s, lastName = %s]", id, name, lastName);
     }
 }
